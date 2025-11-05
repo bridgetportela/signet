@@ -27,6 +27,8 @@ function embedYoutube(url, autoplay, background) {
 }
 
 function getVideoElement(source, autoplay, background) {
+  //DEMO ONLY - Turn autoplay on
+  autoplay = true;
   const video = document.createElement('video');
   video.setAttribute('controls', '');
   if (autoplay) video.setAttribute('autoplay', '');
@@ -39,6 +41,9 @@ function getVideoElement(source, autoplay, background) {
       if (autoplay) video.play();
     });
   }
+
+  //DEMO ONLY - Mute video on load
+  video.muted = true;
 
   const sourceEl = document.createElement('source');
   sourceEl.setAttribute('src', source);
@@ -58,6 +63,7 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
       block.dataset.embedLoaded = true;
     });
   } else {
+    console.log("bap bap bap")
     const videoEl = getVideoElement(link, autoplay, background);
     block.append(videoEl);
     videoEl.addEventListener('canplay', () => {
@@ -67,11 +73,11 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
 };
 
 export default function decorate(block) {
-  console.log("video component called successfully");
+  // console.log("video component called successfully");
   const link = block.querySelector(':scope div:nth-child(1) > div a').innerHTML.trim();
-  console.log("link", link);
+  // console.log("link", link);
   //const link = block.querySelector(':scope div:nth-child(1) > div a').innerHTML.trim();
-  block.textContent = '';
+  // block.textContent = '';
   block.dataset.embedLoaded = false;
   const autoplay = block.classList ? block.classList.contains('autoplay') : false;
   const playOnLoad = block.classList ? block.classList.contains('playonload') : false;
