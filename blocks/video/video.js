@@ -73,11 +73,25 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
 };
 
 export default function decorate(block) {
-  // console.log("video component called successfully");
   const link = block.querySelector(':scope div:nth-child(1) > div a').innerHTML.trim();
-  // console.log("link", link);
-  //const link = block.querySelector(':scope div:nth-child(1) > div a').innerHTML.trim();
-  // block.textContent = '';
+
+  // Remove link text from the block
+  block.querySelector(':scope div:nth-child(1)').remove();
+
+  // Video text content
+  block.querySelector(':scope div:nth-child(1)')?.classList.add('video-text-wrapper');
+
+  const videoTextWrapper = block.querySelector('.video-text-wrapper');
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('video-button-container');
+  const buttons = videoTextWrapper.querySelectorAll('p.button-container');
+  buttons.forEach((btn) => {
+    buttonContainer.appendChild(btn);
+  });
+
+  videoTextWrapper.querySelector(':scope > div')?.appendChild(buttonContainer);
+  
+
   block.dataset.embedLoaded = false;
   const autoplay = block.classList ? block.classList.contains('autoplay') : false;
   const playOnLoad = block.classList ? block.classList.contains('playonload') : false;

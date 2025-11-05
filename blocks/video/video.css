@@ -9,11 +9,12 @@
 }
 
 .video-container .video-wrapper .video {
-  text-align: center;
+  text-align: left;
   width: 100%;
   max-width: initial;
   margin: auto;
   padding: 0;
+  position: relative;
 }
 
 .video[data-embed-loaded='false']:not(.placeholder) {
@@ -100,4 +101,32 @@
 .video-container h3::after,
 .video-container h4::after {
   border-bottom: 2px solid #17b677;
+}
+
+
+.video .video-text-wrapper {
+  position: absolute; 
+  bottom: 10vh;
+  left: 3rem;
+  color: #fff;
+  z-index: 2;
+}
+
+.video .video-text-wrapper > div > h1 {
+  font-size: 48px;
+}
+
+.video .video-text-wrapper > div > p {
+  font-size: 22px;
+  margin-top: 0;
+}
+
+.video .video-text-wrapper a {
+  color: inherit;
+}
+
+.video .video-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }

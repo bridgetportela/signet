@@ -32,6 +32,7 @@
   --link-color: var(--brand-link-color, #131313);
   --link-hover-color: var(--brand-link-hover-color, #F97316);
   --main-accent-color: var(--brand-theme-color, #FB923C);
+  --brand-color:#083a39;
 
 
   --dark-color-opacity: rgba(0, 0, 0, 0.55);
@@ -546,11 +547,44 @@ button:disabled:hover::after {
   cursor: unset;
 }
 
+a.button.primary,
+button.primary {
+  background-color: #fff;
+  color: #000 !important;
+  padding: 1rem;
+  border-radius: 0;
+}
+
+a.button.primary:hover,
+button.primary:hover {
+  text-decoration: none;
+  background-color: #ebebeb;
+}
+
+a.button.primary::after,
+button.primary::after {
+  display: none;
+}
+
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: #fff;
+  color: #000 !important;
+  padding: 1rem;
+  border-radius: 0;
+  font-style: normal;
+}
+
+a.button.secondary::after ,
+button.secondary::after {
+  display: none;
+}
+
+a.button.secondary:hover,
+button.secondary:hover {
+  text-decoration: none;
+  background-color: var(--brand-color);
+  color: #fff !important;
 }
 
 main img {
