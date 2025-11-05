@@ -12,7 +12,7 @@ export default async function decorate(block) {
   const CONFIG = {
     WRAPPER_SERVICE_URL: 'https://prod-60.eastus2.logic.azure.com:443/workflows/94ef4cd1fc1243e08aeab8ae74bc7980/triggers/manual/paths/invoke',
     WRAPPER_SERVICE_PARAMS: 'api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=e81iCCcESEf9NzzxLvbfMGPmredbADtTZSs8mspUTa4',
-    GRAPHQL_QUERY: '/graphql/execute.json/ref-demo-eds/CTAByPath',
+    GRAPHQL_QUERY: '/graphql/execute.json/signet/promotionBannerByPath',
     EXCLUDED_THEME_KEYS: new Set(['brandSite', 'brandLogo'])
   };
 	
@@ -24,7 +24,7 @@ export default async function decorate(block) {
 	
 	//const aempublishurl = getMetadata('publishurl') || '';
 	
-  const persistedquery = '/graphql/execute.json/ref-demo-eds/CTAByPath';
+  const persistedquery = '/graphql/execute.json/signet/promotionBannerByPath';
 
 	//const properties = readBlockConfig(block);
  
@@ -140,7 +140,7 @@ export default async function decorate(block) {
           bannerDetailStyle = 'background-image: linear-gradient(90deg,rgba(0,0,0,0.6), rgba(0,0,0,0.1) 80%) ,url('+imgUrl+');';
         }
 
-        block.innerHTML = `<div class='banner-content block ${displayStyle}' data-aue-resource=${itemId} data-aue-label="Offer Content fragment" data-aue-type="reference" data-aue-filter="contentfragment" style="${bannerContentStyle}">
+        block.innerHTML = `<div class='banner-content block ${displayStyle}' data-aue-resource=${itemId} data-aue-label="Promotion Banner - Content fragment" data-aue-type="reference" data-aue-filter="contentfragment" style="${bannerContentStyle}">
           <div class='banner-detail ${alignment}' style="${bannerDetailStyle}" data-aue-prop="bannerimage" data-aue-label="Main Image" data-aue-type="media" >
                 <p data-aue-prop="title" data-aue-label="Title" data-aue-type="text" class='cftitle'>${cfReq?.title}</p>
                 <p data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'>${cfReq?.subtitle}</p>
