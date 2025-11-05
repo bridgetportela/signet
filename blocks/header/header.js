@@ -357,15 +357,15 @@ async function addLogoLink(langCode) {
     }
 
     try {
-      const logoImage = document.querySelector('.nav-brand img');
+      const logoImage = document.querySelector('.nav-tool img');
       const anchor = document.createElement('a');
       Object.assign(anchor, {
           href: logoLink,
           title: logoImage?.alt,
       });
-      const picture = document.querySelector('.nav-brand picture');
+      const picture = document.querySelector('.nav-tool picture');
       if (picture) anchor.appendChild(picture);
-      const targetElement = document.querySelector('.nav-brand .default-content-wrapper');
+      const targetElement = document.querySelector('.nav-tool .default-content-wrapper');
       if (targetElement) {
           targetElement.appendChild(anchor);
       }
@@ -612,7 +612,8 @@ export default async function decorate(block) {
         }
       });
       langWrap.append(langBtn, langMenu);
-      const targetContainer = contentWrapper || navTools;
+      // const targetContainer = contentWrapper || navTools;
+      const targetContainer = navTools;
       targetContainer.append(langWrap);
     } catch (e) {
       // eslint-disable-next-line no-console
@@ -642,6 +643,10 @@ export default async function decorate(block) {
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
+
+  const sectionNavSections = nav.querySelector('.nav-sections');
+  nav.appendChild(sectionNavSections);
+
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
@@ -649,6 +654,8 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+
+
   block.append(navWrapper);
   settingAltTextForSearchIcon();
   //fetchingPlaceholdersData();

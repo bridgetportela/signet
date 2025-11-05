@@ -215,7 +215,7 @@
   }
 }
 
-@media (width >= 1024px) {
+@media (width >= 900px) {
   :root {
     /** Measuring impact card paragraph variables **/
     --body-indicator-paragraph: 12px;
@@ -231,7 +231,7 @@
     --section-reduced-space: 320px;
 
     /* Screen variables */
-    --nav-height: 172px;
+    --nav-height: 188px;
     --nav-padding: 35px;
 
     /* main-heading styles */
