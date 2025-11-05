@@ -107,7 +107,7 @@
 
 .video .video-text-wrapper {
   position: absolute; 
-  bottom: 10vh;
+  bottom: 80px;
   left: 2rem;
   color: #fff;
   z-index: 2;
