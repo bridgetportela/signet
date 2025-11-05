@@ -553,6 +553,7 @@ button.primary {
   color: #000 !important;
   padding: 1rem;
   border-radius: 0;
+  border: 1px solid #000;
 }
 
 a.button.primary:hover,
@@ -573,6 +574,7 @@ button.secondary {
   padding: 1rem;
   border-radius: 0;
   font-style: normal;
+  border: 1px solid #000;
 }
 
 a.button.secondary::after ,
@@ -818,6 +820,10 @@ main > .section[data-sec-full-width="true"] > div {
   max-width: 100%;
   margin: 0;
   padding: 0;
+}
+
+main .section[data-center-title="true"] > .default-content-wrapper {
+  text-align: center;
 }
 
 

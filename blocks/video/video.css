@@ -29,6 +29,7 @@
 
 .video video {
   max-width: 100%;
+  min-height: 400px;
   max-height: 650px;
   width: 100%;
   aspect-ratio: inherit;
@@ -107,7 +108,7 @@
 .video .video-text-wrapper {
   position: absolute; 
   bottom: 10vh;
-  left: 3rem;
+  left: 2rem;
   color: #fff;
   z-index: 2;
 }
@@ -129,4 +130,10 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+}
+
+@media (width > 900px) {
+  .video .video-text-wrapper {
+    left: 3rem;
+  }
 }

@@ -63,7 +63,6 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
       block.dataset.embedLoaded = true;
     });
   } else {
-    console.log("bap bap bap")
     const videoEl = getVideoElement(link, autoplay, background);
     block.append(videoEl);
     videoEl.addEventListener('canplay', () => {

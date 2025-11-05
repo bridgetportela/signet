@@ -353,6 +353,20 @@
             "bg-image"
           ]
         }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "center-title",
+        "label": "Center title.",
+        "condition": {
+          "!=": [
+            {
+              "var": "style"
+            },
+            "bg-image"
+          ]
+        }
       }
     ]
   },
