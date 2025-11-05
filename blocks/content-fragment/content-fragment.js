@@ -96,7 +96,7 @@ export default async function decorate(block) {
           return;
         }
 
-        const cfReq = offer?.data?.ctaByPath?.item;
+        const cfReq = offer?.data?.promotionBannerByPath?.item;
 
         if (!cfReq) {
           console.error('Error parsing response from GraphQL request - no valid data found', {
@@ -110,7 +110,7 @@ export default async function decorate(block) {
         // Set up block attributes
         const itemId = `urn:aemconnection:${contentPath}/jcr:content/data/${variationname}`;
         block.setAttribute('data-aue-type', 'container');
-        const imgUrl = isAuthor ? cfReq.bannerimage?._authorUrl : cfReq.bannerimage?._publishUrl;
+        const imgUrl = isAuthor ? cfReq.backgroundImage?._authorUrl : cfReq.backgroundImage?._publishUrl;
 
         // Determine the layout style
         const isImageLeft = displayStyle === 'image-left';
@@ -149,7 +149,7 @@ export default async function decorate(block) {
                  <p class="button-container ${ctaStyle}">
                   <a href="${cfReq?.ctaUrl ? cfReq.ctaUrl : '#'}" data-aue-prop="ctaUrl" data-aue-label="Button Link/URL" data-aue-type="reference"  target="_blank" rel="noopener" data-aue-filter="page" class='button'>
                     <span data-aue-prop="ctalabel" data-aue-label="Button Label" data-aue-type="text">
-                      ${cfReq?.ctalabel}
+                      ${cfReq?.ctaLabel}
                     </span>
                   </a>
                 </p>
