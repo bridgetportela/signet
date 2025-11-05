@@ -41,7 +41,7 @@
   --nav-background-color: var(--brand-nav-background-color, #0000008c);
   --nav-text-color: var(--brand-nav-text-color, #000000);
   --footer-background-color: var(--brand-footer-background-color, #000);
-  --footer-text-color: var(--brand-footer-text-color, #ffffff);
+  --footer-text-color: var(--brand-footer-text-color, #000000);
   
   /* fonts */
   --body-font-family: 'Adobe Clean', roboto, roboto-fallback, sans-serif;
@@ -349,7 +349,7 @@ body header .nav-wrapper{
   color: var(--nav-text-color);
 }
 body footer {
-  background-color: var(--footer-background-color);
+  background-color: #fff;
   color: var(--footer-text-color);
 }
 /*theme header-footer*/
