@@ -822,7 +822,7 @@ main > .section[data-sec-full-width="true"] > div {
   padding: 0;
 }
 
-main .section[data-center-title="true"] > .default-content-wrapper {
+main .section[data-center-default-content="true"] > .default-content-wrapper {
   text-align: center;
 }
 

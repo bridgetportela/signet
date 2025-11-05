@@ -4,6 +4,7 @@
 }
 .columns-wrapper .columns {
   box-sizing: border-box;
+  background-color: var(--brand-color);
 }
 .columns-wrapper .columns .columns-row {
   box-sizing: border-box;
@@ -30,7 +31,13 @@
   display: block;
   object-fit: cover;
   object-position: center;
-  max-height: 500px;
+  max-height: 635px;
+}
+
+.columns > div > div:not(.columns-img-col) {
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
 }
 
 .columns .columns-video-col {
@@ -47,12 +54,15 @@
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 24px;
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns > div > div:not(.columns-img-col) {
+    padding: 0;
   }
 }
 

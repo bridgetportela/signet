@@ -357,8 +357,8 @@
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "center-title",
-        "label": "Center title.",
+        "name": "center-default-content",
+        "label": "Center default content.",
         "condition": {
           "!=": [
             {
