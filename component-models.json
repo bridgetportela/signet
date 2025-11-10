@@ -6589,7 +6589,7 @@
         "valueType": "string"
       },
       {
-        "component": "cf-reference:skus",
+        "component": "cf-reference:sku",
         "name": "sku",
         "label": "SKU",
         "valueType": "string"
